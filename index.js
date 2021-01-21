@@ -6,7 +6,7 @@ const line = require('@line/bot-sdk');
 const channelAccessToken = 'bpFztfsxpmvyXXj5PZEn0qd+Ki05ztdweG/Q3n33CM/DWyot2OviZmuWFLl28eLpJp/0DKLCdYc1RMNSjLocNgK5NdE5nzPr046a0yK7ID50u9CgWss9Ev9VVcHYOH7S1Ipam7u6ixqbG+DXJIh04AdB04t89/1O/w1cDnyilFU='
 const subscriptionIdAdd = '600020d34c3723284ca1b22b'
 const subscriptionIdRemove = '5fbfc14d0d9f0b17c6091c17'
-const baseURL = "https://thailandapp.azurewebsites.net"
+const baseURL = "https://thailandapp.azurewebsites.net/"
 
 let app = express()
 
