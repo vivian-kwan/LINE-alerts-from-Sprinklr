@@ -39,8 +39,6 @@ function sendMessage(groupId, title, link, lineClient) {
 app.post('/', async (req, res) => {
 	if (req.body) {
 
-		axios.post('https://sprinklr-callback-app.herokuapp.com/azure-logs', req.body)
-
 		console.log(req.body);
 		try {
 
