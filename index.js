@@ -49,8 +49,26 @@ app.post('/', async (req, res) => {
       });
 
       if (req.body.type == "message.created") {
-        if (req.body.payload.enrichments.sentiment == -1) {
-          dbHelper.connect().then(async () => {
+        // if (req.body.payload.enrichments.sentiment == -1) {
+        //   dbHelper.connect().then(async () => {
+        //     let groups = await dbHelper.getGroups()
+        //     for (let i = 0; i < groups.length; i++) {
+        //       let groupId = groups[i].groupId
+        //       let link = req.body.payload.permalink
+        //       let text = req.body.payload.content.text
+
+        //       console.log(groupId)
+        //       console.log(text)
+        //       console.log(link)
+
+        //       sendMessage(groupId, text, link, lineClient)
+        //     }
+        //   }).catch((error) => {
+        //     console.log("Unable to connect to database: " + error);
+        //   })
+        // }
+
+        dbHelper.connect().then(async () => {
             let groups = await dbHelper.getGroups()
             for (let i = 0; i < groups.length; i++) {
               let groupId = groups[i].groupId
@@ -66,7 +84,6 @@ app.post('/', async (req, res) => {
           }).catch((error) => {
             console.log("Unable to connect to database: " + error);
           })
-        }
       }
 		}
 		catch (err) {
