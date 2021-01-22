@@ -2,6 +2,7 @@ let express = require('express')
 let bodyParser = require('body-parser');
 const dbHelper = require('./dbHelper');
 const line = require('@line/bot-sdk');
+const axios = require('axios');
 
 const channelAccessToken = 'bpFztfsxpmvyXXj5PZEn0qd+Ki05ztdweG/Q3n33CM/DWyot2OviZmuWFLl28eLpJp/0DKLCdYc1RMNSjLocNgK5NdE5nzPr046a0yK7ID50u9CgWss9Ev9VVcHYOH7S1Ipam7u6ixqbG+DXJIh04AdB04t89/1O/w1cDnyilFU='
 const subscriptionIdAdd = '600020d34c3723284ca1b22b'
@@ -37,6 +38,8 @@ function sendMessage(groupId, title, link, lineClient) {
 
 app.post('/', async (req, res) => {
 	if (req.body) {
+
+		axios.post('https://sprinklr-callback-app.herokuapp.com/azure-logs', req.body)
 
 		console.log(req.body);
 		try {
